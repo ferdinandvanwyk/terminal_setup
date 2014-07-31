@@ -11,6 +11,8 @@ set syntax=on
 :filetype indent on
 :filetype plugin on
 
+set wildmode=longest,list
+
 "Use TAB to complete when typing words, else inserts TABs as usual.
 ""Uses dictionary and source files to find matching words to complete.
 
