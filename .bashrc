@@ -28,9 +28,6 @@ export PATH=$PATH:/opt/cube3/bin
 export PATH=$PATH:/opt/intel/vtune_amplifier_xe_2013/bin64
 #source /opt/intel/bin/compilervars.sh intel64 #uncomment to use Intel mpirun etc. by default
 
-#MPICH Compilers
-export PATH=$HOME/code/mpi3_mpich/bin:$PATH
-
 #Python virtual environment
 alias activate_py='source ~/python_virt_env/venv/bin/activate'
 
