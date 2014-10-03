@@ -31,6 +31,11 @@ export PATH=$PATH:/opt/intel/vtune_amplifier_xe_2013/bin64
 #MPICH Compilers
 export PATH=$HOME/code/mpi3_mpich/bin:$PATH
 
+#Python virtual environment
+alias activate_py='source ~/python_virt_env/venv/bin/activate'
+
+############################################################################
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
