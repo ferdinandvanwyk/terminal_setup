@@ -31,6 +31,9 @@ export PATH=$PATH:/opt/intel/vtune_amplifier_xe_2013/bin64
 #Python virtual environment
 alias activate_py='source ~/python_virt_env/venv/bin/activate'
 
+#RVM
+source ~/.rvm/scripts/rvm
+
 ############################################################################
 
 # If not running interactively, don't do anything
