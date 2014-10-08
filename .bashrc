@@ -19,6 +19,7 @@ export EDITOR=/usr/bin/vim
 
 #CodeRunner
 export CPP=g++
+alias cim="coderunner im"
 
 # CUBE Path
 export PATH=$PATH:/opt/cube3/bin
