@@ -30,10 +30,12 @@ export PATH=$PATH:/opt/intel/vtune_amplifier_xe_2013/bin64
 #source /opt/intel/bin/compilervars.sh intel64 #uncomment to use Intel mpirun etc. by default
 
 #Python virtual environment
+alias pip="/usr/bin/pip3"
 alias activate_py='source ~/python_virt_env/venv/bin/activate'
 
 #RVM
 source ~/.rvm/scripts/rvm
+
 
 ############################################################################
 

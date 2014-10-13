@@ -11,10 +11,10 @@ echo "Making vim backup directory..."
 mkdir .vim_backup
 
 echo "Setting up python virtual environment and installing basic packages..."
-sudo apt-get install build-essential libatlas-dev libatlas3gf-base python-dev libjpeg-dev libxml2-dev libfreetype6-dev libpng-dev liblapack-dev
-sudo apt-get install python-pip
+sudo apt-get install build-essential libatlas-dev libatlas3gf-base python3-dev libjpeg-dev libxml2-dev libfreetype6-dev libpng-dev liblapack-dev
+sudo apt-get install python3-pip
 sudo pip install virtualenv
-sudo virtualenv python_virt_env
+sudo virtualenv -p /usr/bin/python3.4 python_virt_env
 . ~/python_virt_env/bin/activate
 sudo pip install numpy scipy matplotlib scikit-learn
 deactivate
