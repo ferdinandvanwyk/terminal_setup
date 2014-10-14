@@ -20,7 +20,7 @@ sudo pip install numpy scipy matplotlib scikit-learn
 deactivate
 
 echo "Installig packages needed for GS2..."
-sudo apt-get install gcc gfortran openmpi-bin libfftw3-3 libfftw3-mpi-dev libfftw3-dev libfftw3-bin libnetcdf-dev netcdf-bin
+sudo apt-get install gcc gfortran openmpi-bin libopenmpi-dev libfftw3-3 libfftw3-mpi-dev libfftw3-dev libfftw3-bin libnetcdf-dev netcdf-bin
 
 echo "Downloading and installing CR and gs2crmod..."
 sudo curl -sSL https://get.rvm.io | bash -s stable
