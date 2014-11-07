@@ -3,6 +3,7 @@ set expandtab
 set shiftwidth=2  
 set autoindent    
 set smartindent   
+set colorcolumn=80
 
 set foldmethod=syntax
 set syntax=on
