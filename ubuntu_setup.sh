@@ -12,11 +12,15 @@ mkdir .vim_backup
 
 echo "Setting up python virtual environment and installing basic packages..."
 sudo apt-get install build-essential libatlas-dev libatlas3gf-base python3-dev libjpeg-dev libxml2-dev libfreetype6-dev libpng-dev liblapack-dev
-sudo apt-get install python3-pip
+sudo apt-get install python3-pip python-pip python-tk python3-tk tk-dev
 sudo pip install virtualenv
 sudo virtualenv -p /usr/bin/python3.4 python_virt_env
 . ~/python_virt_env/bin/activate
-sudo pip install numpy scipy matplotlib scikit-learn
+pip3 install numpy scipy matplotlib scikit-learn ipython netcdf4 sphinx
+deactivate
+sudo virtualenv -p /usr/bin/python2.7 python_virt_env2
+. ~/python_virt_env2/bin/activate
+pip install numpy scipy matplotlib scikit-learn ipython netcdf4 sphinx
 deactivate
 
 echo "Installig packages needed for GS2..."
