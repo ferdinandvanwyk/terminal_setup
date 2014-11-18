@@ -35,3 +35,16 @@ endfunction
 
 set backup
 set backupdir=~/.vim_backup
+
+"Pathogen                                                                       
+execute pathogen#infect()                                                       
+                                                                                
+"Airline customization                                                          
+let g:airline#extensions#tabline#enabled = 1                                    
+set laststatus=2                                                                
+let g:airline_theme = 'solarized'                                               
+                                                                                
+"Solarized                                                                      
+set t_Co=16                                                                     
+let g:solarized_termcolors=16                                                   
+colorscheme solarized
