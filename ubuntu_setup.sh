@@ -23,11 +23,11 @@ sudo apt-get install python3-pip python-pip python-tk python3-tk tk-dev
 sudo pip install virtualenv
 sudo virtualenv -p /usr/bin/python3.4 python_virt_env
 . ~/python_virt_env/bin/activate
-pip3 install numpy scipy matplotlib scikit-learn ipython netcdf4 sphinx nose
+pip3 install numpy scipy matplotlib scikit-learn ipython netcdf4 sphinx nose seaborn numpydoc
 deactivate
 sudo virtualenv -p /usr/bin/python2.7 python_virt_env2
 . ~/python_virt_env2/bin/activate
-pip install numpy scipy matplotlib scikit-learn ipython netcdf4 sphinx nose
+pip install numpy scipy matplotlib scikit-learn ipython netcdf4 sphinx nose seaborn numpydoc
 deactivate
 
 echo "Installig packages needed for GS2..."
