@@ -5,7 +5,7 @@
 #GS2 setup
 export PATH=$HOME/code/scripts:$HOME/code/gs2/trunk/:$HOME/tools/bin:$PATH
 export CODE_RUNNER_SYSTEM=generic_linux
-export GK_SYSTEM=ubuntu
+export GK_SYSTEM=gnu_ubuntu
 
 #TRINITY setup
 export SYSTEM=ubuntu
