@@ -48,3 +48,7 @@ let g:airline_theme = 'solarized'
 set t_Co=16                                                                     
 let g:solarized_termcolors=16                                                   
 colorscheme solarized
+
+"Customized indentation for different languages
+au FileType ruby setl sw=2 sts=2 et
+au FileType python setl sw=4 sts=4 et
