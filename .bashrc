@@ -18,7 +18,6 @@ export MAKEFLAGS=-IMakefiles
 export EDITOR=/usr/bin/vim
 
 #CodeRunner
-export CPP=g++
 alias cim="coderunner im"
 
 # CUBE Path
