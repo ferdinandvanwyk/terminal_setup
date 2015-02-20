@@ -18,16 +18,13 @@ export MAKEFLAGS=-IMakefiles
 export EDITOR=/usr/bin/vim
 
 #CodeRunner
-export CPP=g++
 alias cim="coderunner im"
 
 # CUBE Path
 export PATH=$PATH:/opt/cube3/bin
 
 #Intel and Intel VTune
-#export PATH=$PATH:/opt/intel/bin
 export PATH=$PATH:/opt/intel/vtune_amplifier_xe_2013/bin64
-#source /opt/intel/bin/compilervars.sh intel64 #uncomment to use Intel mpirun etc. by default
 
 #Python virtual environment
 alias activate_py='source ~/python_virt_env/bin/activate'
@@ -36,6 +33,8 @@ alias activate_py2='source ~/python_virt_env2/bin/activate'
 #RVM
 source ~/.rvm/scripts/rvm
 
+# General alias shortcuts
+alias open="gnome-open"
 
 ############################################################################
 
