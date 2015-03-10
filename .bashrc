@@ -24,9 +24,7 @@ alias cim="coderunner im"
 export PATH=$PATH:/opt/cube3/bin
 
 #Intel and Intel VTune
-#export PATH=$PATH:/opt/intel/bin
 export PATH=$PATH:/opt/intel/vtune_amplifier_xe_2013/bin64
-#source /opt/intel/bin/compilervars.sh intel64 #uncomment to use Intel mpirun etc. by default
 
 #Python virtual environment
 alias activate_py='source ~/python_virt_env/bin/activate'
@@ -40,6 +38,8 @@ if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
 
+# General alias shortcuts
+alias open="gnome-open"
 
 ############################################################################
 
