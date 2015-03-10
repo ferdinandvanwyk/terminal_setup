@@ -35,6 +35,11 @@ alias activate_py2='source ~/python_virt_env2/bin/activate'
 #RVM
 source ~/.rvm/scripts/rvm
 
+# Git autocompletion
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
 
 ############################################################################
 
