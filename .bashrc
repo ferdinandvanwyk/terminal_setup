@@ -20,18 +20,17 @@ export EDITOR=/usr/bin/vim
 #CodeRunner
 alias cim="coderunner im"
 
-# CUBE Path
-export PATH=$PATH:/opt/cube3/bin
-
-#Intel and Intel VTune
-export PATH=$PATH:/opt/intel/vtune_amplifier_xe_2013/bin64
-
 #Python virtual environment
 alias activate_py='source ~/python_virt_env/bin/activate'
 alias activate_py2='source ~/python_virt_env2/bin/activate'
 
 #RVM
 source ~/.rvm/scripts/rvm
+
+# Git autocompletion
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
 
 # General alias shortcuts
 alias open="gnome-open"
