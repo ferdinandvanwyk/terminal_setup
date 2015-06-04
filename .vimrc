@@ -53,3 +53,4 @@ colorscheme solarized
 au FileType ruby setl sw=2 sts=2 et
 au FileType python setl sw=4 sts=4 et
 au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
+au BufRead,BufNewFile *.html setl sw=2 sts=2 et
