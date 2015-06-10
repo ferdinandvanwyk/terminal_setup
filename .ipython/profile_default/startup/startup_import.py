@@ -9,5 +9,6 @@ import pandas as pd
 
 sns.set_context('talk')
 sns.set_style('whitegrid', {'font.family' : 'sans-serif', 
-                            'font.sans-serif' : 'Helvetica'})
+                            'font.sans-serif' : ['Helvetica', 'Arial', 
+                                                 'Verdana', 'sans-serif']})
 
