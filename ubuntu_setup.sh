@@ -18,7 +18,7 @@ cd Downloads/gnome-terminal-colors-solarized
 ./install
 
 echo "Setting up python virtual environment and installing basic packages..."
-sudo apt-get install build-essential libatlas-dev libatlas3gf-base python3-dev libjpeg-dev libxml2-dev libfreetype6-dev libpng-dev liblapack-dev
+sudo apt-get install build-essential libatlas-dev libatlas3gf-base python3-dev libjpeg-dev libxml2-dev libfreetype6-dev libpng-dev liblapack-dev ttf-mscorefonts-installer
 sudo apt-get install python3-pip python-pip python-tk python3-tk tk-dev
 sudo pip install virtualenv
 sudo virtualenv -p /usr/bin/python3.4 python_virt_env
