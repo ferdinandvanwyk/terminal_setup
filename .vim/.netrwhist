@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/vanwyk/code/gs2crmod_master'
-let g:netrw_dirhist_2='/home/vanwyk/code/coderunner/lib/coderunner'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/vanwyk/code/pytest_simple_example/mean'
+let g:netrw_dirhist_2='/home/vanwyk/code/gs2_correlation/test/test_run'
+let g:netrw_dirhist_3='/home/vanwyk/work/gs2/mast/nonlinear/mast_min/v/id_2'
+let g:netrw_dirhist_4='/home/vanwyk/code/gs2_correlation/test'

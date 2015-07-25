@@ -5,6 +5,9 @@ set autoindent
 set cindent   
 set colorcolumn=80
 
+let fortran_free_source=1
+let fortran_fold=1
+
 set foldmethod=syntax
 set syntax=on
 
@@ -36,21 +39,39 @@ endfunction
 set backup
 set backupdir=~/.vim_backup
 
-"Pathogen                                                                       
-execute pathogen#infect()                                                       
-                                                                                
-"Airline customization                                                          
+"Pathogen
+execute pathogen#infect()
+
+"Airline customization
 let g:airline#extensions#tabline#enabled = 1                                    
 set laststatus=2                                                                
-let g:airline_theme = 'solarized'                                               
-                                                                                
-"Solarized                                                                      
-set t_Co=16                                                                     
-let g:solarized_termcolors=16                                                   
+let g:airline_theme = 'solarized'
+
+"Solarized
+set t_Co=16
+let g:solarized_termcolors=16
 colorscheme solarized
 
-"Customized indentation for different languages
-au FileType ruby setl sw=2 sts=2 et
+"Customized indentation for different languages                                 
+au FileType ruby setl sw=2 sts=2 et                                             
 au FileType python setl sw=4 sts=4 et
 au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
-au BufRead,BufNewFile *.html setl sw=2 sts=2 et
+au BufRead,BufNewFile *.f?? setl sw=3 sts=3 et
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
