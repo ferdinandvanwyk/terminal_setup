@@ -49,10 +49,13 @@ set t_Co=16
 let g:solarized_termcolors=16                                                   
 colorscheme solarized
 
+"LaTeX                                                                          
+let g:tex_flavor='latex'                                                        
+set grepprg=grep\ -nH\ $*
+
 "Customized indentation for different languages
 au FileType ruby setl sw=2 sts=2 et
 au FileType python setl sw=4 sts=4 et
 au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
-let g:tex_flavor='latex'                                                        
 au BufRead,BufNewFile *.tex setl sw=2 sts=2 et
 au BufRead,BufNewFile *.html setl sw=2 sts=2 et
