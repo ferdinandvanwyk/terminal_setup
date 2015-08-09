@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# General alias shortcuts
+alias open="gnome-open"
+alias mount_shared="sudo mount -t vboxsf vm_shared ~/vm_shared/"
+
 #GS2 setup
 export PATH=$HOME/code/scripts:$HOME/code/gs2/trunk/:$HOME/tools/bin:$PATH
 export CODE_RUNNER_SYSTEM=generic_linux
@@ -12,7 +16,6 @@ export SYSTEM=ubuntu
 export FLUXCODE=gs2
 export GS2="/home/ferd/code/gs2_trinity/trunk"
 export MAKEFLAGS=-IMakefiles
-#export MAKE_LIB=ON #sets whether GS2 is built as a library or not
 
 #VIM
 export EDITOR=/usr/bin/vim
@@ -21,8 +24,8 @@ export EDITOR=/usr/bin/vim
 alias cim="coderunner im"
 
 #Python virtual environment
-alias activate_py='source ~/python_virt_env/bin/activate'
-alias activate_py2='source ~/python_virt_env2/bin/activate'
+source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/py_envs
 
 #RVM
 source ~/.rvm/scripts/rvm
@@ -31,9 +34,6 @@ source ~/.rvm/scripts/rvm
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
-
-# General alias shortcuts
-alias open="gnome-open"
 
 ############################################################################
 
