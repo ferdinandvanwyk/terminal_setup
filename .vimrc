@@ -64,3 +64,6 @@ au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
 au BufRead,BufNewFile *.f?? setl sw=3 sts=3 et
 au BufRead,BufNewFile *.tex setl sw=2 sts=2 et
 au BufRead,BufNewFile *.html setl sw=2 sts=2 et
+
+"No yanking of old text after pasting
+vnoremap p "_dP
