@@ -17,6 +17,9 @@ export FLUXCODE=gs2
 export GS2="/home/ferd/code/gs2_trinity/trunk"
 export MAKEFLAGS=-IMakefiles
 
+# GENE setup                                                                    
+export MACHINE=ubuntu_gfortran
+
 #VIM
 export EDITOR=/usr/bin/vim
 
