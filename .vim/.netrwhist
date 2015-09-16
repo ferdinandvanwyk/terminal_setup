@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/local/home/vanwyk/code/gs2_correlation/gs2_correlation'
-let g:netrw_dirhist_2='/local/home/vanwyk/Dropbox/Oxford/PhD/work_log/problem_log/gs2_parallel'
-let g:netrw_dirhist_3='/home/vanwyk/.matplotlib'
-let g:netrw_dirhist_4='/local/home/vanwyk/work/gs2/mast/linear_2_spec/explicit/full_linear_scan/0.02'
-let g:netrw_dirhist_5='/home/vanwyk/.vim/plugins'

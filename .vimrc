@@ -46,6 +46,7 @@ execute pathogen#infect()
 let g:airline#extensions#tabline#enabled = 1                                    
 set laststatus=2                                                                
 let g:airline_theme = 'solarized'
+let g:syntastic_fortran_compiler_options = "-fdefault-real-8 -ffree-form -ffree-line-length-none"
 
 "Solarized
 set t_Co=16
@@ -60,7 +61,6 @@ set grepprg=grep\ -nH\ $*
 au FileType ruby setl sw=2 sts=2 et
 au FileType python setl sw=4 sts=4 et
 au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
-au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
 au BufRead,BufNewFile *.f?? setl sw=3 sts=3 et
 au BufRead,BufNewFile *.tex setl sw=2 sts=2 et
 au BufRead,BufNewFile *.html setl sw=2 sts=2 et
@@ -69,7 +69,7 @@ au BufRead,BufNewFile *.html setl sw=2 sts=2 et
 vnoremap p "_dP
 
 " Don't screw up folds when inserting text that might affect them, until
-" " leaving insert mode. Foldmethod is local to the window. Protect against
-" " screwing up folding when switching between windows.
+" leaving insert mode. Foldmethod is local to the window. Protect against
+" screwing up folding when switching between windows.
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
