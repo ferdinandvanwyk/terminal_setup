@@ -8,12 +8,12 @@ set colorcolumn=80
 let fortran_free_source=1
 let fortran_fold=1
 
-set foldmethod=syntax
-set syntax=on
-
 :filetype on
 :filetype indent on
 :filetype plugin on
+
+set foldmethod=syntax
+syntax enable
 
 set wildmode=longest,list
 
@@ -47,6 +47,7 @@ let g:airline#extensions#tabline#enabled = 1
 set laststatus=2                                                                
 let g:airline_theme = 'solarized'
 let g:syntastic_fortran_compiler_options = "-fdefault-real-8 -ffree-form -ffree-line-length-none"
+let g:syntastic_python_python_exec = '/local/home/vanwyk/py_envs/py3/bin/python'
 
 "Solarized
 set t_Co=16
