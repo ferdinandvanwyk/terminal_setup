@@ -17,6 +17,9 @@ syntax enable
 
 set wildmode=longest,list
 
+"Custom shortcuts 
+:nnoremap <F2> $A #<Esc>YpVkr#p
+
 "Use TAB to complete when typing words, else inserts TABs as usual.
 ""Uses dictionary and source files to find matching words to complete.
 
