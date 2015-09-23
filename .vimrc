@@ -56,6 +56,7 @@ let g:airline_theme = 'solarized'
 let g:syntastic_fortran_compiler_options = "-fdefault-real-8 -ffree-form -ffree-line-length-none"
 let g:syntastic_python_python_exec = '/local/home/vanwyk/py_envs/py3/bin/python'
 let g:syntastic_tex_checkers=['chktex']
+let g:Tex_PromptedCommands=''
 let g:syntastic_tex_chktex_args = "-n24"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
