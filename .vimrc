@@ -20,7 +20,9 @@ set wildmode=longest,list
 "Custom shortcuts 
 :nnoremap <F2> $A #<Esc>YpVkr#p
 :map <F7> <Esc>:w <Return>
-:map! <F7> <Esc>:w <Return>
+:map! <F7> <Esc>:w <Return>i
+:map <F8> <Esc>:w <Return><C-z>
+:map! <F8> <Esc>:w <Return><C-z>
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 ""Uses dictionary and source files to find matching words to complete.
