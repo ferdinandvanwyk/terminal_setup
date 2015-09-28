@@ -4,7 +4,7 @@
 
 # General alias shortcuts
 alias open="gnome-open"
-alias mount_shared="sudo mount -t vboxsf vm_shared ~/vm_shared/"
+alias pip_all="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 #GS2 setup
 export PATH=$HOME/code/scripts:$HOME/code/gs2/trunk/:$HOME/tools/bin:$PATH

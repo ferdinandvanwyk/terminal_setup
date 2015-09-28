@@ -23,6 +23,9 @@ set wildmode=longest,list
 :map! <F7> <Esc>:w <Return>i
 :map <F8> <Esc>:w <Return><C-z>
 :map! <F8> <Esc>:w <Return><C-z>
+:map <F9> <Esc>:wq <Return>
+:map! <F9> <Esc>:wq <Return>
+:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "Use TAB to complete when typing words, else inserts TABs as usual.
 ""Uses dictionary and source files to find matching words to complete.
