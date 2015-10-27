@@ -60,6 +60,7 @@ let g:syntastic_fortran_compiler_options = "-fdefault-real-8 -ffree-form -ffree-
 let g:syntastic_python_python_exec = '/local/home/vanwyk/py_envs/py3/bin/python'
 let g:syntastic_tex_checkers=['chktex']
 let g:Tex_PromptedCommands=''
+let g:Tex_Env_table ="\\begin{table}\<cr>\\centering\<cr>\\caption{<+Caption text+>}\<cr>\\begin{tabular}{<+dimensions+>}\<cr>\\toprule\<cr><+headings+>\<cr>\\midrule\<cr><+data+>\<cr>\\bottomrule\<cr>\\end{tabular}\<cr>\\label{tab:<+label+>}\<cr>\\end{table}<++>"
 let g:syntastic_tex_chktex_args = "-n24"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
