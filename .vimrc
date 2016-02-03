@@ -1,10 +1,9 @@
-set tabstop=4     
-set expandtab     
-set shiftwidth=4  
-set autoindent    
-set cindent   
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set autoindent
+set cindent
 set colorcolumn=80
-set backspace=indent,start
 
 let fortran_free_source=1
 let fortran_fold=1
@@ -18,10 +17,13 @@ syntax enable
 
 set wildmode=longest,list
 
-"Custom shortcuts 
+" Remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+"Custom shortcuts
 :nnoremap <F2> $A #<Esc>YpVkr#p
 :map <F7> <Esc>:w <Return>
-:map! <F7> <Esc>:w <Return>i
+:map! <F7> <Esc>:w <Return>
 :map <F8> <Esc>:w <Return><C-z>
 :map! <F8> <Esc>:w <Return><C-z>
 :map <F9> <Esc>:wq <Return>
@@ -54,8 +56,8 @@ set backupdir=~/.vim_backup
 execute pathogen#infect()
 
 "Airline customization
-let g:airline#extensions#tabline#enabled = 1                                    
-set laststatus=2                                                                
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
 let g:airline_theme = 'solarized'
 let g:syntastic_fortran_compiler_options = "-fdefault-real-8 -ffree-form -ffree-line-length-none"
 let g:syntastic_python_python_exec = '/local/home/vanwyk/py_envs/py3/bin/python'
@@ -63,7 +65,7 @@ let g:riv_fold_auto_update = 0
 let g:syntastic_tex_checkers=['chktex']
 let g:Tex_PromptedCommands=''
 let g:Tex_Env_table ="\\begin{table}\<cr>\\centering\<cr>\\caption{<+Caption text+>}\<cr>\\begin{tabular}{<+dimensions+>}\<cr>\\toprule\<cr><+headings+>\<cr>\\midrule\<cr><+data+>\<cr>\\bottomrule\<cr>\\end{tabular}\<cr>\\label{tab:<+label+>}\<cr>\\end{table}<++>"
-let g:syntastic_tex_chktex_args = "-n24 -n8 -n1"
+let g:syntastic_tex_chktex_args = "-n24 -n8 -n3 -n1"
 let g:syntastic_html_tidy_ignore_errors=["'<' + '/' + letter not allowed here"]
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -78,17 +80,19 @@ set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
 
-"LaTeX                                                                          
-let g:tex_flavor='latex'                                                        
+"LaTeX
+let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
 
 "Customized indentation for different languages
 au FileType ruby setl sw=2 sts=2 et
 au FileType python setl sw=4 sts=4 et
-au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
-au BufRead,BufNewFile *.f?? setl sw=3 sts=3 et
 au BufRead,BufNewFile *.tex setl sw=2 sts=2 et
+au BufRead,BufNewFile *.cls setl sw=2 sts=2 et
+au BufRead,BufNewFile *.f?? setl sw=3 sts=3 et
+au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
 au BufRead,BufNewFile *.html setl sw=2 sts=2 et
+au BufRead,BufNewFile *.md setl sw=2 sts=2 et
 
 "No yanking of old text after pasting
 vnoremap p "_dP
