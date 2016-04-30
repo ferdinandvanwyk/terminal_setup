@@ -4,20 +4,13 @@
 
 # General alias shortcuts
 alias open="gnome-open"
-alias pip_all="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 #GS2 setup
-export PATH=$HOME/code/scripts:$HOME/code/gs2/trunk/:$HOME/tools/bin:$PATH
 export CODE_RUNNER_SYSTEM=generic_linux
 export GK_SYSTEM=gnu_ubuntu
-
-#TRINITY setup
-export SYSTEM=ubuntu
-export FLUXCODE=gs2
-export GS2="/home/ferd/code/gs2_trinity/trunk"
 export MAKEFLAGS=-IMakefiles
 
-# GENE setup                                                                    
+# GENE setup
 export MACHINE=ubuntu_gfortran
 
 #VIM
@@ -29,6 +22,7 @@ alias cim="coderunner im"
 #Python virtual environment
 source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/py_envs
+alias pip_all="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 #RVM
 source ~/.rvm/scripts/rvm
