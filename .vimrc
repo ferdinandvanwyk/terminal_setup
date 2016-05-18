@@ -4,6 +4,7 @@ set shiftwidth=4
 set autoindent
 set cindent
 set colorcolumn=80
+set backspace=indent,eol,start
 
 let fortran_free_source=1
 let fortran_fold=1
@@ -21,6 +22,8 @@ set wildmode=longest,list
 autocmd BufWritePre * :%s/\s\+$//e
 
 "Custom shortcuts
+:command Sd SyntasticToggleMode
+:command Sc SyntasticCheck
 :nnoremap <F2> $A #<Esc>YpVkr#p
 :map <F7> <Esc>:w <Return>
 :map! <F7> <Esc>:w <Return>
@@ -56,6 +59,8 @@ set backupdir=~/.vim_backup
 execute pathogen#infect()
 
 "Airline customization
+let g:syntastic_pylint_checkers=['pylint']
+let g:syntastic_python_pylint_post_args='--disable=E0611, C0111'
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_theme = 'solarized'
