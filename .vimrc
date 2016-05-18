@@ -60,7 +60,7 @@ execute pathogen#infect()
 
 "Airline customization
 let g:syntastic_pylint_checkers=['pylint']
-let g:syntastic_python_pylint_post_args='--disable=E0611, C0111'
+let g:syntastic_python_pylint_post_args=['--disable=E0611, C0111']
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_theme = 'solarized'
