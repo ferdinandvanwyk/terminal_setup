@@ -5,6 +5,7 @@ set autoindent
 set cindent
 set colorcolumn=80
 set backspace=indent,eol,start
+set so=999 "Keeps cursor near middle of screen
 
 let fortran_free_source=1
 let fortran_fold=1
