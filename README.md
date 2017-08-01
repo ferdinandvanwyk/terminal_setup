@@ -17,7 +17,7 @@ Vim and Terminal Colours
   http://ethanschoonover.com/solarized
 * Vim-airline is an extension for pimping your Vim status and tablines:
   https://github.com/bling/vim-airline
-* Finally to get solarized colouring in the terminal: 
+* To get solarized colouring in the terminal: 
   https://github.com/Anthony25/gnome-terminal-colors-solarized 
-
+* For OSX: https://github.com/tomislav/osx-terminal.app-colors-solarized
 
