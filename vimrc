@@ -1,3 +1,4 @@
+" General
 set tabstop=4
 set expandtab
 set shiftwidth=4
@@ -25,6 +26,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 "Custom shortcuts
 :command Sd SyntasticToggleMode
 :command Sc SyntasticCheck
+:command Sp setlocal spell spelllang=en_gb
 :nnoremap <F2> $A #<Esc>YpVkr#p
 :map <F7> <Esc>:w <Return>
 :map! <F7> <Esc>:w <Return>
@@ -34,14 +36,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 :map! <F9> <Esc>:wq <Return>
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-"Use TAB to complete when typing words, else inserts TABs as usual.
-""Uses dictionary and source files to find matching words to complete.
-
-"See help completion for source,
-""Note: usual completion is on <C-n> but more trouble to press all the time.
-"Never type the same word twice and maybe learn a new spellings!
-""Use the Linux dictionary when spelling is in doubt.
-"Window users can copy the file to their machine.
+" Autocomplete
 function! Tab_Or_Complete()
    if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
       return "\<C-N>"
@@ -51,7 +46,6 @@ function! Tab_Or_Complete()
 endfunction
 
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-:set dictionary="/usr/dict/words"
 
 set backup
 set backupdir=~/.vim_backup
@@ -59,20 +53,13 @@ set backupdir=~/.vim_backup
 "Pathogen
 execute pathogen#infect()
 
-"Airline customization
-let g:syntastic_pylint_checkers=['pylint']
-let g:syntastic_python_pylint_post_args=['--disable=E0611, C0111']
+" Airline customization
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_theme = 'solarized'
-let g:syntastic_fortran_compiler_options = "-fdefault-real-8 -ffree-form -ffree-line-length-none"
-let g:syntastic_python_python_exec = '/local/home/vanwyk/py_envs/py3/bin/python'
 let g:riv_fold_auto_update = 0
-let g:syntastic_tex_checkers=['chktex']
-let g:Tex_PromptedCommands=''
-let g:Tex_Env_table ="\\begin{table}\<cr>\\centering\<cr>\\caption{<+Caption text+>}\<cr>\\begin{tabular}{<+dimensions+>}\<cr>\\toprule\<cr><+headings+>\<cr>\\midrule\<cr><+data+>\<cr>\\bottomrule\<cr>\\end{tabular}\<cr>\\label{tab:<+label+>}\<cr>\\end{table}<++>"
-let g:syntastic_tex_chktex_args = "-n24 -n8 -n3 -n1"
-let g:syntastic_html_tidy_ignore_errors=["'<' + '/' + letter not allowed here"]
+
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -80,9 +67,36 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_fortran_compiler_options = "-fdefault-real-8 -ffree-form -ffree-line-length-none"
+let g:syntastic_python_python_exec = '/usr/local/bin/python3'
+let g:syntastic_tex_checkers=['chktex']
+let g:syntastic_tex_chktex_args = "-n24 -n8 -n1 -1"
+let g:syntastic_html_tidy_ignore_errors=["'<' + '/' + letter not allowed here"]
+let g:syntastic_java_javac_classpath = ".:/Users/vanwyk/java_jars/*.jar"
+let g:syntastic_java_checkers=['javac', 'checkstyle']
+let g:syntastic_cpp_compiler="clang++"
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler_options=" -std=c++14"
+let g:syntastic_cpp_checkers = ['clang_tidy', 'clang-check', 'gcc']
+let g:syntastic_cpp_clang_tidy_args = '-checks=*'
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR> " toggle
+autocmd vimenter * NERDTree | wincmd p " auto start, return focus to file
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " auto quit when closing file
+
+" Vim Latex
+let g:Tex_PromptedCommands=''
+let g:Tex_FoldedEnvironments="verbatim,comment,eq,gather,align,figure,table,thebibliography,keywords,abstract,titlepage,multline,inparaenum,quote"
+let g:Tex_Env_table ="\\begin{table}\<cr>\\centering\<cr>\\caption{<+Caption text+>}\<cr>\\begin{tabular}{<+dimensions+>}\<cr>\\toprule\<cr><+headings+>\<cr>\\midrule\<cr><+data+>\<cr>\\bottomrule\<cr>\\end{tabular}\<cr>\\label{tab:<+label+>}\<cr>\\end{table}<++>"
 
 "Solarized
-set t_Co=16
+syntax enable
+if strftime("%H") < 18 && strftime("%H") > 7
+    set background=light
+else
+    set background=dark
+endif
 let g:solarized_termcolors=16
 colorscheme solarized
 
@@ -90,15 +104,21 @@ colorscheme solarized
 let g:tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
 
+"Vim HTML
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 "Customized indentation for different languages
 au FileType ruby setl sw=2 sts=2 et
+au FileType java setl sw=4 sts=4 et
 au FileType python setl sw=4 sts=4 et
-au BufRead,BufNewFile *.tex setl sw=2 sts=2 et
-au BufRead,BufNewFile *.cls setl sw=2 sts=2 et
-au BufRead,BufNewFile *.f?? setl sw=3 sts=3 et
+au FileType cpp setl sw=4 sts=4 et
 au BufRead,BufNewFile *.rst setl sw=3 sts=3 et
+au BufRead,BufNewFile *.md setl sw=3 sts=3 et
+au BufRead,BufNewFile *.f?? setl sw=3 sts=3 et
+au BufRead,BufNewFile *.tex setl sw=2 sts=2 et
+au BufRead,BufNewFile *.sty setl sw=2 sts=2 et
 au BufRead,BufNewFile *.html setl sw=2 sts=2 et
-au BufRead,BufNewFile *.md setl sw=2 sts=2 et
 
 "No yanking of old text after pasting
 vnoremap p "_dP
@@ -108,3 +128,13 @@ vnoremap p "_dP
 " screwing up folding when switching between windows.
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
+" Disable auto commenting of next lines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+

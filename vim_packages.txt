@@ -1,0 +1,11 @@
+SimpylFold
+emmet-vim
+nerdcommenter
+nerdtree
+riv.vim
+syntastic
+vim-airline
+vim-colors-solarized
+vim-instant-markdown
+vim-surround
+writegood.vim

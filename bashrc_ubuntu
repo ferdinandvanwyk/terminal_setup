@@ -5,27 +5,13 @@
 # General alias shortcuts
 alias open="gnome-open"
 
-#GS2 setup
-export CODE_RUNNER_SYSTEM=generic_linux
-export GK_SYSTEM=gnu_ubuntu
-export MAKEFLAGS=-IMakefiles
-
-# GENE setup
-export MACHINE=ubuntu_gfortran
-
 #VIM
 export EDITOR=/usr/bin/vim
-
-#CodeRunner
-alias cim="coderunner im"
 
 #Python virtual environment
 source /usr/local/bin/virtualenvwrapper.sh
 export WORKON_HOME=$HOME/py_envs
 alias pip_all="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
-
-#RVM
-source ~/.rvm/scripts/rvm
 
 # Git autocompletion
 if [ -f ~/.git-completion.bash ]; then
