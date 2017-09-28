@@ -52,15 +52,13 @@ fi
 ###################
 
 PATH=/Users/vanwyk/homebrew/opt/coreutils/libexec/gnubin:$PATH
-export CLICOLOR=1
-export LSCOLORS=Exfxcxdxbxegedabagacad
+eval `dircolors $HOME/.dircolors`
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 force_color_prompt=yes
-
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
     color_prompt=yes

@@ -78,7 +78,7 @@ let g:syntastic_cpp_compiler="clang++"
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler_options=" -std=c++14"
 let g:syntastic_cpp_checkers = ['clang_tidy', 'clang-check', 'gcc']
-let g:syntastic_cpp_clang_tidy_args = '-checks=*'
+let g:syntastic_cpp_clang_tidy_args = '-checks=* -std=c++14'
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR> " toggle
