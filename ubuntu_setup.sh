@@ -22,25 +22,6 @@ sudo apt-get install build-essential libatlas-dev libatlas3gf-base python3-dev l
 sudo apt-get install python3-pip python-pip python-tk python3-tk tk-dev
 sudo pip install virtualenv virtualenvwrapper
 
-echo "Installig packages needed for GS2..."
-sudo apt-get install gcc gfortran openmpi-bin libopenmpi-dev libfftw3-3 libfftw3-mpi-dev libfftw3-dev libfftw3-bin libnetcdf-dev netcdf-bin
-
-echo "Downloading and installing CR and gs2crmod..."
-sudo curl -sSL https://get.rvm.io | bash -s stable
-. ~/.rvm/scripts/rvm
-type rvm | head -n 1
-rvm install 2.1.2
-rvm use 2.1 --default
-
-mkdir code
-cd code
-svn co svn://svn.code.sf.net/p/coderunner/svn/installer_new coderunner_svn
-cd coderunner_svn
-mkdir $HOME/custom_software
-sudo make -j 4 hd all rb PREFIX=$HOME/custom_software
-sudo apt-get install rubygems-integration ruby-dev
-sudo gem install rb-gsl coderunner gs2crmod genecrmod
-
 
 
 
