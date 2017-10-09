@@ -1,8 +1,9 @@
-SimpylFold
+delimitMate
 emmet-vim
 nerdcommenter
 nerdtree
 riv.vim
+SimpylFold
 syntastic
 vim-airline
 vim-colors-solarized

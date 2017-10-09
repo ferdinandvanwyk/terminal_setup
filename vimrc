@@ -77,7 +77,7 @@ let g:syntastic_java_checkers=['javac', 'checkstyle']
 let g:syntastic_cpp_compiler="clang++"
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler_options=" -std=c++14"
-let g:syntastic_cpp_checkers = ['clang_tidy', 'clang-check', 'gcc']
+let g:syntastic_cpp_checkers = ['clang_tidy', 'gcc']
 let g:syntastic_cpp_clang_tidy_args = '-checks=* -std=c++14'
 
 " NERDTree
@@ -137,4 +137,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Delimitmate auto indentation
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
 
