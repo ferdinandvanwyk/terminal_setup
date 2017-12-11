@@ -7,6 +7,11 @@ set cindent
 set colorcolumn=80
 set backspace=indent,eol,start
 set so=999 "Keeps cursor near middle of screen
+set cino=N-s
+set cinoptions+=g2
+set cinoptions+=h2
+set term=xterm-256color
+set splitright
 
 let fortran_free_source=1
 let fortran_fold=1
@@ -142,3 +147,5 @@ nnoremap <C-H> <C-W><C-H>
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_expand_space = 1
 
+" ctags shortcuts
+map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
